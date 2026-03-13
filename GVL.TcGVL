@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <GVL Name="GVL" Id="{9a4a26a6-8616-49d4-8304-9e5355eca52a}">
+  <GVL Name="GVL" Id="{1c0c5ac1-78ac-4977-a7d6-da996df388f7}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	gstart : BOOL:=true;
-	gcounter : INT := 10;
-	
+	result : STRING(30);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
