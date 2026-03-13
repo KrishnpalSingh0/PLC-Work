@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Switch_Case" Id="{ea80c397-a5d3-4ccc-9b2d-30f7653e7310}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Switch_Case
+VAR
+	
+	num1 : INT := 34;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE num1 of
+	
+	0..17 : GVL.result :='You cannot drive ';
+	18..100: GVL.result :='You can drive';
+//	19 : GVL.result :='You can drive';
+	ELSE
+		GVL.result :='Unknown age';
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="Switch_Case">
+      <LineId Id="10" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="17" Count="4" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,78 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="MAIN" Id="{58440b67-6f2a-49c1-9129-34cfacb90e6a}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{d4979ca9-6b71-4a27-9710-91a3a6df4123}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 
-VAR_INPUT
-    iBool : BOOL;
-END_VAR
-
-VAR_OUTPUT
-    oVal : BOOL;
-END_VAR
-
 VAR
-    lcnt : INT := 1;
-    lString : STRING(10);
-    lstr : STRING(10);
-	tTemp : INT;
-	num1: INT :=2;
-	num2: INT :=3;
-	result : INT;
-	
-	
-END_VAR
-
-VAR_TEMP
-    tTemps : INT;
-END_VAR
-
-VAR CONSTANT
-    cNum : INT := 10;
-END_VAR
-
-VAR RETAIN
-    rCount : REAL := 7.5;
+	answer : STRING(30);
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-tTemp := lcnt;
-
-lcnt := lcnt + 1;
-
-IF lcnt > cNum THEN
-    oVal := TRUE;
-ELSE
-    oVal := FALSE;
-END_IF
-
-tTemps := num1 + num2;
-result := tTemps;
-
-IF GVL.gstart THEN
-    GVL.gcounter := GVL.gcounter + 1;
-
-    IF GVL.gcounter > 10 THEN
-        lString := 'hey';
-    ELSE
-        lstr := 'Done';
-    END_IF
-END_IF
-
-rCount := rCount + 1.0;]]></ST>
+      <ST><![CDATA[answer := GVL.result;
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="319" Count="1" />
-      <LineId Id="341" Count="0" />
-      <LineId Id="340" Count="0" />
-      <LineId Id="322" Count="5" />
-      <LineId Id="348" Count="0" />
-      <LineId Id="328" Count="0" />
-      <LineId Id="349" Count="0" />
-      <LineId Id="330" Count="9" />
-      <LineId Id="291" Count="0" />
-      <LineId Id="137" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

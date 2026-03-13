@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="IF_Else" Id="{b3053d1a-1186-4a55-82ff-f6b2f396af64}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM IF_Else
+
+VAR
+	aNum : INT := 23;
+	bNum : INT := 20;
+
+		
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF aNum > bNum THEN
+	GVL.result := '23 is Greater';
+	ELSE
+	GVL.result := '20 is Greater';
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="IF_Else">
+      <LineId Id="5" Count="0" />
+      <LineId Id="17" Count="1" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
