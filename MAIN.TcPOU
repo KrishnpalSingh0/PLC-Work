@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="MAIN" Id="{d4979ca9-6b71-4a27-9710-91a3a6df4123}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM MAIN
+  <POU Name="MAIN" Id="{c90d913b-80a8-46ab-9d76-c6bd1dc8535d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
 
 VAR
-	answer : STRING(30);
-END_VAR
-]]></Declaration>
+	result : INT;
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[answer := GVL.result;
+      <ST><![CDATA[result := Addition(a := 10,b := 2);
+result := compare(num1 := 10, num2 := 12);
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="11" Count="0" />
-      <LineId Id="10" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="29" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
