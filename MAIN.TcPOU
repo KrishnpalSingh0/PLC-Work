@@ -1,20 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="MAIN" Id="{c90d913b-80a8-46ab-9d76-c6bd1dc8535d}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Main
+  <POU Name="MAIN" Id="{cc4b96ae-f723-45ce-aef6-98a836c60aa7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
 
+END_VAR
 VAR
-	result : INT;
-END_VAR]]></Declaration>
+	
+	(*
+	pSample : POINTER TO INT ;
+	var1: INT := 5;
+	var2 : INT;
+	
+	mArr : ARRAY[1..4] OF INT;
+	pSample : ARRAY[1..4] OF POINTER TO INT;
+	i: INT;
+
+	num1 : INT := 5;
+	pPointer : POINTER TO INT;
+	num2 : INT :=30;
+	
+	
+	numA : INT := 39;
+	refA : REFERENCE TO INT;
+	*)	
+	
+END_VAR
+]]></Declaration>
     <Implementation>
-      <ST><![CDATA[result := Addition(a := 10,b := 2);
-result := compare(num1 := 10, num2 := 12);
-]]></ST>
+      <ST><![CDATA[(* pSample := ADR(var1);
+ var2 := pSample^; 
+ 
+ FOR i:=1 TO 4 DO
+	 mArr[i] := i*3;
+	 pSample[i] := ADR(mArr[i]);	
+ END_FOR 
+ 
+ pPointer := ADR(num1);
+ pPointer^ := 50;
+ 
+ refA REF= numA;
+ refA := 40;
+ 
+ *)
+
+  
+ ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="29" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="47" Count="3" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="63" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="impl_iCalculate" Id="{784685e5-e968-4b4d-ae07-75cdaf7e8b18}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK impl_iCalculate IMPLEMENTS iCalculate
+METHOD multipy : INT;
+METHOD power : INT;
+
+VAR_INPUT
+	a : INT;
+	b : INT;
+	
+END_VAR
+
+VAR
+	i:  INT;
+	
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[multipy := a*b;
+
+FOR i:=1 TO b DO
+	power := a*a;
+END_FOR
+]]></ST>
+    </Implementation>
+    <LineIds Name="impl_iCalculate">
+      <LineId Id="9" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="26" Count="1" />
+      <LineId Id="20" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
