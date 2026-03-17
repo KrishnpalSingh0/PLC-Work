@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Calculator" Id="{74dd59ac-cfc5-4455-ad19-30e58bb64dc0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_Calculator
+
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Addition" Id="{8109a4ab-6b24-4e49-8278-167c1b765cf2}">
+      <Declaration><![CDATA[METHOD Addition : INT
+VAR_INPUT
+	anum : INT;
+	bnum : INT;
+	
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Addition := anum +bnum ;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Division" Id="{827f6919-61f1-497d-9f25-e54e498c6497}">
+      <Declaration><![CDATA[METHOD Division : REAL
+VAR_INPUT
+	val1 : INT;
+	val2 : INT;
+	
+END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Division := val1/val2;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Multiplication" Id="{db768337-a6f4-4fea-b8a8-e90f71ee8954}">
+      <Declaration><![CDATA[METHOD Multiplication : REAL
+VAR_INPUT
+	aNum: REAL;
+	bNum: REAL;
+END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Multiplication := (aNum * bNum);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Substraction" Id="{0897b7da-405b-4eb7-8f11-01710e62348c}">
+      <Declaration><![CDATA[METHOD Substraction : INT
+VAR_INPUT
+	var1 : INT;
+	var2 : INT;
+END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Substraction := var1 - var2;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Calculator">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Calculator.Addition">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Calculator.Division">
+      <LineId Id="5" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Calculator.Multiplication">
+      <LineId Id="5" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Calculator.Substraction">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
