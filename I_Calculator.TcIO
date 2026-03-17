@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Calculator" Id="{f0427eab-56bb-4b2c-9dfa-bfee90da0794}">
+    <Declaration><![CDATA[INTERFACE I_Calculator
+]]></Declaration>
+    <Method Name="Addition" Id="{d3e27a00-68ab-4d73-ab21-297e40b49a8e}">
+      <Declaration><![CDATA[METHOD Addition : INT
+
+VAR_INPUT
+	aNum : INT;
+	bNum : INT;
+	
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Division" Id="{6202dd1d-1314-493f-a062-1ccd49cd26f5}">
+      <Declaration><![CDATA[METHOD Division : REAL
+VAR_INPUT
+	var1:INT;
+	var2:INT;
+	
+END_VAR
+
+VAR_OUTPUT
+	alarm: STRING(40);
+	
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="Multiplication" Id="{308277e7-becc-433e-b4e7-c3670eafa883}">
+      <Declaration><![CDATA[METHOD Multiplication : int
+VAR_INPUT
+	var1:  INT;
+	var2:  INT;
+	
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Subtraction" Id="{ebde04c4-224c-4f4d-8275-0c8e38afb601}">
+      <Declaration><![CDATA[METHOD Subtraction : INT
+VAR_INPUT
+	var1: INT;
+	var2: INT;
+	
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Impl_Calculator" Id="{0b67f055-2a82-4a48-b40d-2fab45ce1496}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Impl_Calculator IMPLEMENTS I_Calculator
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Addition" Id="{1ca162bd-a86e-42f5-a220-5facbfe206e6}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Addition : INT
+VAR_INPUT
+	aNum	: INT;
+	bNum	: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Addition := anum + bnum;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Division" Id="{b5d0691a-3e83-49d8-8d97-72339c6771f3}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Division : REAL
+VAR_INPUT
+	var1	: INT;
+	var2	: INT;
+	
+END_VAR
+
+VAR_OUTPUT
+	alarm:STRING(40);
+	
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF var2 <1 THEN
+	alarm:='value should be greater than 0';
+	Division:=0.0;
+	ELSE
+		 Division := var1/var2;
+	END_IF
+
+
+   
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Multiplication" Id="{a0758e40-d67f-48a4-b60c-cc1ecb7242d1}">
+      <Declaration><![CDATA[
+METHOD Multiplication : INT
+VAR_INPUT
+	var1 :INT;
+	var2 :INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Multiplication := var1 * var2;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Subtraction" Id="{14398578-83c9-4332-ade7-57ff816de713}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Subtraction : INT
+VAR_INPUT
+	var1	: INT;
+	var2	: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Subtraction := var1 - var2;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Impl_Calculator">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Impl_Calculator.Addition">
+      <LineId Id="8" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_Impl_Calculator.Division">
+      <LineId Id="20" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="28" Count="3" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="8" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Impl_Calculator.Multiplication">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Impl_Calculator.Subtraction">
+      <LineId Id="8" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,28 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="MAIN" Id="{38f47839-a58d-4dac-9b95-122d86772852}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{15c64ea8-f85c-4d43-aaa2-6b13a241561d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fb1 : FB_practice1;
-	fb_Cal : FB_Calculator;
-	fb_cal_div : REAL;
-	fb_cal_sub : INT;
-	fb_cal_add : INT;
-	fb_cal_mul : REAL;	
+	Fb :FB_Impl_Calculator;
+	res1 : INT;
+	res2 : INT;
+	res3 : INT;
+	res4 : REAL;
+	msg  : STRING(40);
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fb1(a:=1);
-fb_cal_add:= fb_Cal.Addition(anum:=2,bnum:=4);
-fb_cal_div:= fb_Cal.Division(val1:=39, val2:=2);
-fb_cal_mul:= fb_Cal.Multiplication(aNum:= 9.5, bNum:= 4.3);
-fb_cal_sub := fb_Cal.Substraction(var1:= 5,var2:= 6);
+      <ST><![CDATA[res1 := fb.Addition(anum:= 34, bNum := 16);
+res2 := fb.Multiplication(var1:= 2, var2:= 3);
+res3 := fb.Subtraction(var1:=10,var2:=4);
+res4 := fb.Division(var1:=45,var2:=0,alarm=>msg);
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="9" Count="3" />
-      <LineId Id="15" Count="0" />
+      <LineId Id="12" Count="3" />
     </LineIds>
   </POU>
 </TcPlcObject>
