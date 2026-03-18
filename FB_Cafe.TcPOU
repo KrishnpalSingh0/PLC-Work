@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Cafe" Id="{c912e802-7119-4487-a469-e04d772708a8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Cafe IMPLEMENTS I_Cafe
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Items" Id="{626fcb21-6091-4fc0-b6f8-0efe8e7921c1}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+
+METHOD Items : STRING
+VAR_INPUT
+	item_arr	: ARRAY [1..4] OF STRING ;
+END_VAR
+VAR
+	result : STRING(50):='';
+	index : INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+FOR index:=1 TO 4 DO
+	result := CONCAT(result, item_arr[index]); ;
+END_FOR
+
+Items := result;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="NumItem" Id="{aaa8b36e-8c53-4e1c-aae9-6155c17183b1}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+
+METHOD NumItem : INT
+VAR_INPUT
+	arr	: ARRAY [1..5] OF INT ;
+END_VAR
+VAR
+	sum	: INT :=0;
+	index : INT ;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+FOR index := 1 TO 5 DO
+	sum := arr[index] + sum;
+END_FOR
+
+NumItem := sum;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Cafe">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Cafe.Items">
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Cafe.NumItem">
+      <LineId Id="16" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="11" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

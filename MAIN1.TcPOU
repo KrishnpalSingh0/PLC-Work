@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN1" Id="{23adf1d7-7a1f-43d7-b3a8-62d6f369d74d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN1
+VAR
+	controller : I_Cafe;
+	controller1 : FB_Cafe;
+	itemName : STRING(20);
+    itemCount : INT;
+	nums : ARRAY[1..5] OF INT := [3,4,2,1,5];
+    names : ARRAY[1..4] OF STRING := ['cake','biscuit','chai','coffee'];
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[controller := controller1;
+itemName := controller.Items(item_arr:= names);
+itemCount := controller.NumItem(arr:= nums);]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN1">
+      <LineId Id="14" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

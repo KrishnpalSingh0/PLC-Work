@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Cafe" Id="{8b2c1a64-b78a-4b31-b7ce-52080cedb2e9}">
+    <Declaration><![CDATA[INTERFACE I_Cafe
+]]></Declaration>
+    <Method Name="Items" Id="{f35f662f-7acb-4478-986b-7372fb77cbeb}">
+      <Declaration><![CDATA[METHOD Items : STRING;
+VAR_INPUT
+	item_arr : ARRAY [1..4] OF STRING ;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="NumItem" Id="{e57e9988-4ac6-44fa-8476-8f2820f64a28}">
+      <Declaration><![CDATA[METHOD NumItem : INT
+
+VAR_INPUT
+	arr : ARRAY [1..5] OF INT ;
+	
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>
