@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Car" Id="{55a10b9e-da53-4489-ab61-f2198590d2ab}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Car
+VAR
+	speed : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[speed := 30;]]></ST>
+    </Implementation>
+    <Property Name="Prop_Speed" Id="{087eaec3-9dbb-4563-877a-9bbb82c9b855}">
+      <Declaration><![CDATA[PROPERTY Prop_Speed : INT
+]]></Declaration>
+      <Get Name="Get" Id="{8956eb0e-d84f-42f0-95ed-a357c6259348}">
+        <Declaration><![CDATA[]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Prop_speed := speed;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{a82fb52f-4a24-4bee-ae4e-93449e0f2242}">
+        <Declaration><![CDATA[]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[speed := Prop_Speed;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_Car">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Car.Prop_Speed.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Car.Prop_Speed.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

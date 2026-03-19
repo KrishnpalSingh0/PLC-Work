@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{d1cf3e6b-77a6-49b1-a624-9dd03ade4d63}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+
+VAR
+	fbCar : FB_Car;
+	ispeed : INT;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbCar.Prop_Speed := 50;
+ispeed := fbCar.Prop_Speed; 
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
