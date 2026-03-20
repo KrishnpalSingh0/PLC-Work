@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_MRAddition" Id="{306ce494-6279-41ce-89e0-470882d2a76e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MRAddition EXTENDS FB_MOAddition
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_addition" Id="{9b8e99b3-0e11-430b-8e3f-bf4c8b734257}">
+      <Declaration><![CDATA[METHOD M_addition : INT
+VAR_INPUT
+	iNum1 : INT;
+	iNum2 : INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[M_addition := iNum1 + iNum2;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_MRAddition">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MRAddition.M_addition">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

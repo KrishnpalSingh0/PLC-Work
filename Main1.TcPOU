@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Main1" Id="{eee39cb3-8040-40cd-b2d7-647d2690fe9a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main1
+// PLC doesn't support Method overloading it only support method overRiding
+VAR
+	fb_MRAddition : FB_MRAddition;
+	fb_MOAddition : FB_MOAddition;
+	iTotal : INT;
+	iTotal1 : INT;
+	
+	fb_PracAction : FB_PracAction;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iTotal := 0;
+iTotal := fb_MRAddition.M_addition(iNum1:=4, iNum2:=10);
+iTotal1 := fb_MOAddition.M_addition(iNum1:=3, iNum2:=6);
+
+// using Action
+fb_PracAction();
+]]></ST>
+    </Implementation>
+    <LineIds Name="Main1">
+      <LineId Id="5" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="21" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

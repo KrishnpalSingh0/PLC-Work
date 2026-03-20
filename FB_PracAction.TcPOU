@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_PracAction" Id="{9014c51f-e9a7-4e0b-a96f-bc66ce02cced}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PracAction
+VAR
+	iNum1 : INT;
+	iNum2 : INT;
+	iResult : INT;
+	str : STRING(30);
+	iMulResult : INT;
+	iDivResult : REAL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iNum1 := 20;
+iNum2 := 3;
+A_Addition();
+A_Division();
+A_Multiplication();]]></ST>
+    </Implementation>
+    <Action Name="A_Addition" Id="{3a8a782a-b7d5-4a30-9e66-b35d233ac71a}">
+      <Implementation>
+        <ST><![CDATA[iResult := iNum1 + iNum2;
+
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_Division" Id="{6c792718-4afd-4fb1-b906-d585b183f1a1}">
+      <Implementation>
+        <ST><![CDATA[IF iNum2 > 0 THEN
+	iDivResult := iNum1 / iNum2;
+	ELSE
+	str:= 'Value should be more than 0';
+END_IF]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_Multiplication" Id="{8051354d-371e-4dd7-9147-6a7584297b0f}">
+      <Implementation>
+        <ST><![CDATA[iMulResult := iNum1 * iNum2;
+]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="FB_PracAction">
+      <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="3" />
+    </LineIds>
+    <LineIds Name="FB_PracAction.A_Addition">
+      <LineId Id="6" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PracAction.A_Division">
+      <LineId Id="1" Count="1" />
+      <LineId Id="5" Count="1" />
+      <LineId Id="3" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PracAction.A_Multiplication">
+      <LineId Id="1" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
