@@ -1,25 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="MAIN" Id="{d1cf3e6b-77a6-49b1-a624-9dd03ade4d63}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{8474141e-0dbc-4266-ae6e-3ccde0332937}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbTon : TON :=(PT := T#5S);
+	bBoolean : BOOL;
+	fbTof : TOF :=(PT := T#5S);
+	bBool : BOOL;
+END_VAR
 
 VAR
-	fbCar : FB_Car;
-	ispeed : INT;
-	
+	fbRtrig : R_TRIG;
+	bBoolean1 : BOOL;
+	iRTrigCounter : INT;
 END_VAR
-]]></Declaration>
-    <Implementation>
-      <ST><![CDATA[fbCar.Prop_Speed := 50;
-ispeed := fbCar.Prop_Speed; 
 
-]]></ST>
+VAR
+	fbFtrig : F_TRIG;
+	bBoolean2 : BOOL;
+	iFTrigCounter : INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTon(IN := bBoolean);
+fbTof(IN := bBool);
+
+fbRtrig(CLK:= bBoolean1);
+IF fbRtrig.Q THEN
+	iRTrigCounter := iRTrigCounter + 1;
+END_IF
+
+fbFtrig(CLK:= bBoolean2);
+IF fbFtrig.Q THEN
+	iFTrigCounter := iFTrigCounter + 1;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="20" Count="0" />
       <LineId Id="11" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="12" Count="0" />
+      <LineId Id="21" Count="2" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="36" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
