@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_practice1" Id="{47a3e7c9-b149-42e7-9be5-0e0c95fa3577}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_practice1
+
+VAR_INPUT
+	a : INT;
+END_VAR
+
+VAR_OUTPUT
+	result : INT;
+END_VAR
+
+VAR
+	i : int;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[result := a;
+FOR i:=1 TO 5 DO
+	result := result + 1;
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="FB_practice1">
+      <LineId Id="14" Count="0" />
+      <LineId Id="31" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

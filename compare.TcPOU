@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="compare" Id="{4f560adb-e788-4e97-a048-c50c2e29cd0b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION compare : int
+
+VAR_INPUT
+	num1: INT;
+	num2: INT;
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF num1 > num2 THEN
+	compare := num1;
+ELSE
+	compare := num2;
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="compare">
+      <LineId Id="19" Count="1" />
+      <LineId Id="23" Count="1" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="27" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Driving_license" Id="{a972f47f-90c4-4ccf-aaf5-a91c02bc26c9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Driving_license : int
+VAR_INPUT
+	iAge: INT := 19;
+	
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="Driving_license">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
