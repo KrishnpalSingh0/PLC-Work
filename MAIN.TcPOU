@@ -11,7 +11,7 @@ END_VAR
 
 VAR
 	fbRtrig : R_TRIG;
-	bBoolean1 : BOOL;
+	bBoolean1 : BOOL ;
 	iRTrigCounter : INT;
 END_VAR
 
