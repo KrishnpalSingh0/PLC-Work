@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_Factorial" Id="{bcdacec8-6303-4747-8027-92536c5b0e43}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_Factorial
+VAR_INPUT
+	nFactorial : INT;
+END_VAR
+VAR
+	nResult : INT;
+	i : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nResult := 1;
+FOR i := 1 TO nFactorial DO
+	nResult := nResult * i;
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="F_Factorial">
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
