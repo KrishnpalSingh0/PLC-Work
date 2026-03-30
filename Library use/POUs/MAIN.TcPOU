@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{52aca2d0-1bb2-46ee-8cb4-67c020c93d59}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbAddition : FB_Addition;
+	iMath : I_MathOperation;
+	fbMul : FB_Multiply;
+	iResult1 : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iMath := fbMul;
+fbAddition(iNum1:= 2, iNum2:= 4);
+iMath.M_Calculate(iNum1 := 2, iNum2 := 3, iResult => iResult1);
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="12" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="66" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
