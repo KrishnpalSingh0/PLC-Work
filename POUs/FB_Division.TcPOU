@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Division" Id="{d220ec1e-99c1-44e1-a744-41bcbdaa89bf}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Division IMPLEMENTS I_MathOperation
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_Calculate" Id="{0c79b946-c784-4243-ad40-a60ba27424cf}">
+      <Declaration><![CDATA[METHOD M_Calculate 
+VAR_INPUT
+	iNum1	: INT;
+	iNum2	: INT;
+END_VAR
+VAR
+	strMessage : String(30);
+END_VAR
+VAR_OUTPUT
+	iResult : INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF iNum2 > 0 THEN
+	iResult := iNum1/iNum2;
+ELSE
+	strMessage := 'iNum2 should be greater than 0';
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Division">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Division.M_Calculate">
+      <LineId Id="8" Count="1" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="10" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

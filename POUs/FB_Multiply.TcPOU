@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Multiply" Id="{0706964e-87b9-4fc0-8ea7-1c586e87e63a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Multiply IMPLEMENTS I_MathOperation
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_Calculate" Id="{e82fcc23-8558-4212-9078-b6fe75c70b7f}">
+      <Declaration><![CDATA[METHOD M_Calculate
+VAR_INPUT
+	iNum1	: INT;
+	iNum2	: INT;
+END_VAR
+VAR_output
+	iResult : INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iResult := iNum1 * inum2;
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Multiply">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Multiply.M_Calculate">
+      <LineId Id="8" Count="1" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

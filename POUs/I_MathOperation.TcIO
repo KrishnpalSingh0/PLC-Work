@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_MathOperation" Id="{10ab158a-fced-43ea-ab04-7adfbe39a171}">
+    <Declaration><![CDATA[INTERFACE I_MathOperation
+]]></Declaration>
+    <Method Name="M_Calculate" Id="{56032149-96de-440a-a06f-95e1dc355e03}">
+      <Declaration><![CDATA[METHOD M_Calculate 
+VAR_INPUT
+	iNum1 : INT;
+	iNum2 : INT;
+END_VAR
+VAR_OUTPUT
+	iResult : INT;
+END_VAR]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

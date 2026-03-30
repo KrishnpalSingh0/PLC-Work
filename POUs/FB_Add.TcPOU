@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Add" Id="{d7ffef86-a61a-4a4e-8d4f-10a3745f4d30}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Add IMPLEMENTS I_MathOperation
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_Calculate" Id="{fd34e2a4-6767-445f-9aa3-f0ffcad52b9c}">
+      <Declaration><![CDATA[METHOD M_Calculate 
+VAR_INPUT
+	iNum1	: INT;
+	iNum2	: INT;
+END_VAR
+VAR_OUTPUT
+	iResult : INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iResult := iNum1 + iNum2;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Add">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Add.M_Calculate">
+      <LineId Id="8" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
